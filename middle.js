@@ -34,7 +34,7 @@ const middle = function(array) {
   }
 
   if (array.length % 2 === 0) { // if the array length is an even number of elements
-    return [(array[middleHalf] - 1), (array[middleHalf])];
+    return [(array[middleHalf - 1]), (array[middleHalf])];
   }
 
 };
