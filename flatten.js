@@ -24,7 +24,7 @@ let flatten = function(array) {
   let newArray = [];
   for (let i = 0; i < array.length; i++) {
     if (Array.isArray(array[i])) {
-      newArray.push(flatten(array[i]));
+      newArray.push(...flatten(array[i]));
     } else {
       newArray.push(array[i]);
     }
@@ -33,4 +33,6 @@ let flatten = function(array) {
   return newArray;
 };
 
-flatten([1, 2, [3, 4], 5, [6]]);
+const nestArray = [1, 3, [5, 6], 2, 3];
+const flatArray = flatten(nestArray);
+console.log(flatArray);
