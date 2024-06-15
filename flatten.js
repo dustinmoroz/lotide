@@ -20,19 +20,22 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
+
+//following function will takes an array and flattens any array elements within it.
+
 let flatten = function(array) {
-  let newArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      newArray.push(...(array[i]));
-    } else {
-      newArray.push(array[i]);
+  let newArray = []; //new variable definied to store the elements in
+  for (let i = 0; i < array.length; i++) { //loops through the array
+    if (Array.isArray(array[i])) { //if the array elements are arrays
+      newArray.push(...(array[i])); //this will push each element (noted by ...) to the array variable
+    } else { //otherwise
+      newArray.push(array[i]); //this will push the element to the new array
     }
     
   }
-  return newArray;
+  return newArray; //logs the new array
 };
 
-const nestArray = [1, 3, [5, 6], 2, 3];
-const flatArray = flatten(nestArray);
-console.log(flatArray);
+const nestArray = [1, 3, [5, 6], 2, 3]; //new variable
+const flatArray = flatten(nestArray); //new variable that runs the above variable through the function "flatten"
+console.log(flatArray); //logging of that variable
